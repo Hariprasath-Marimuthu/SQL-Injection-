@@ -1,0 +1,72 @@
+Download and install Node.js from the official website: https://nodejs.org/.
+node -v
+npm -v
+mkdir my-web-app
+cd my-web-app
+npm init -y
+npm install express mssql body-parser
+
+npm install express mysql2 body-parser
+npm install express mssql body-parser cors
+npm install bcryptjs jsonwebtoken body-parser express-session
+npm install express-session bcryptjs
+npm install jsonwebtoken bcrypt
+
+node app.js
+
+
+
+
+
+
+UsersAccounts
+CREATE TABLE UserAccounts (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    Password NVARCHAR(255) NOT NULL,
+    Role NVARCHAR(20) NOT NULL DEFAULT 'user'
+);
+
+INSERT INTO UserAccounts (Username, Password, Role)
+VALUES ('admin', 'admin123', 'admin');
+
+
+DROP TABLE Users;  -- Deletes the Users table, including all data and structure
+DROP DATABASE TestDB;  -- Deletes the TestDB database
+
+DELETE FROM Users WHERE UserID = 5;  -- Deletes the user with ID 5
+
+
+TRUNCATE TABLE Users;
+
+DELETE FROM Users
+WHERE Username = 'Alice' AND Email IS NULL;
+
+Delete All Rows in a Table
+DELETE FROM Users;
+
+DELETE FROM Users
+WHERE UserID = 1;
+
+DELETE FROM Users
+WHERE Email IS NULL;
+
+SELECT * FROM Users WHERE Email IS NULL;
+
+INSERT INTO Users (UserID, Username, Email)
+VALUES (1, 'Alice', NULL);
+
+
+update:
+UPDATE useraccounts
+SET Username = 'newusername', Password = 'newpassword123'
+WHERE UserID = 1; -- Use UserID as a unique identifier
+
+
+change password:
+UPDATE useraccounts
+SET Password = 'newPassword123'
+WHERE Username = 'testuser';
+
+
+

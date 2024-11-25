@@ -1,0 +1,23 @@
+
+
+
+const result = await request.query('SELECT * FROM useraccounts WHERE username = @username AND password = @password');
+
+const result = await sql.query(`SELECT * FROM useraccounts WHERE username = '${username}' AND password = '${password}'`);
+
+
+DELETE FROM useraccounts WHERE username = 'testuser1';
+
+DELETE FROM useraccounts WHERE username IN ('testuser', 'admin');
+
+
+
+CREATE TABLE LoginLogs (
+  LogID INT IDENTITY(1,1) PRIMARY KEY,
+  Username NVARCHAR(255) NOT NULL,
+  IPAddress NVARCHAR(255) NOT NULL,
+  IsSuccessful BIT NOT NULL,
+  Timestamp DATETIME DEFAULT GETDATE()
+);
+
+
